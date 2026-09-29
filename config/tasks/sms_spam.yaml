@@ -1,0 +1,14 @@
+# SMS 垃圾短信检测
+task: spam_detection
+type: classification
+dataset: sms_spam
+hf_repo: "ucirvine/sms_spam"
+hf_config: null
+hf_split: "train"
+class_num: 2
+system_prompt: spam_detection
+label_map:
+  0: "not spam"
+  1: "spam"
+input_fields: ["sms"]
+input_template: "{sms}"

@@ -1,0 +1,16 @@
+# SST-2 情感分类
+task: sentiment_analysis
+type: classification
+dataset: sst2
+hf_repo: "nyu-mll/glue"
+hf_config: "sst2"
+hf_split: "validation"
+class_num: 2
+system_prompt: sentiment_analysis
+# 标签 -> 赛题 output 文本
+label_map:
+  0: "negative"
+  1: "positive"
+# 输入字段构造（单句）
+input_fields: ["sentence"]
+input_template: "{sentence}"

@@ -1,0 +1,15 @@
+# RTE 自然语言推理（蕴含判定）
+task: natural_language_inference
+type: classification
+dataset: rte
+hf_repo: "nyu-mll/glue"
+hf_config: "rte"
+hf_split: "validation"
+class_num: 2
+system_prompt: natural_language_inference
+# glue/rte: 0=entailment, 1=not_entailment
+label_map:
+  0: "entailment"
+  1: "not entailment"
+input_fields: ["sentence1", "sentence2"]
+input_template: "Sentence1: '{sentence1}', Sentence2: '{sentence2}'"

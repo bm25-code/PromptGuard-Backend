@@ -1,0 +1,15 @@
+# MRPC 句子等价判定（重复句检测）
+task: duplicate_sentence_detection
+type: classification
+dataset: mrpc
+hf_repo: "nyu-mll/glue"
+hf_config: "mrpc"
+hf_split: "validation"
+class_num: 2
+system_prompt: duplicate_sentence_detection
+# glue/mrpc: 0=not_equivalent, 1=equivalent
+label_map:
+  0: "not equivalent"
+  1: "equivalent"
+input_fields: ["sentence1", "sentence2"]
+input_template: "Sentence1: '{sentence1}', Sentence2: '{sentence2}'"

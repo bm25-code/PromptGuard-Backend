@@ -1,0 +1,19 @@
+# 仇恨言论检测 (Hate Speech and Offensive Language)
+task: hate_detection
+type: classification
+dataset: hsol
+hf_repo: "tdavidson/hate_speech_offensive"
+hf_config: null
+hf_split: "train"
+class_num: 2
+system_prompt: hate_detection
+# 原始 class: 0=hate, 1=offensive, 2=neither -> 二分类: 1=harmful, 0=clean
+raw_class_map:
+  0: 1
+  1: 1
+  2: 0
+label_map:
+  0: "no"
+  1: "yes"
+input_fields: ["tweet"]
+input_template: "{tweet}"
